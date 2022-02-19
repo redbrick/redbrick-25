@@ -3,51 +3,10 @@
 }
 
 body {
-    background: hsla(339, 100%, 55%, 1);
-
-    background: linear-gradient(90deg, hsla(339, 100%, 55%, 1) 0%, hsla(197, 100%, 64%, 1) 100%);
-
-    background: -moz-linear-gradient(90deg, hsla(339, 100%, 55%, 1) 0%, hsla(197, 100%, 64%, 1) 100%);
-
-    background: -webkit-linear-gradient(90deg, hsla(339, 100%, 55%, 1) 0%, hsla(197, 100%, 64%, 1) 100%);
 
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF1B6B", endColorstr="#45CAFF", GradientType=1 );
     font-family: Helvetica, sans-serif;
-}
-
-/* Add a black background color to the top navigation */
-.topnav {
-  background-color: #333;
-  overflow: hidden;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.navbar-link {
-    text-align: right;
-}
-
-.navbar-logo {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    height: 50px;
-    width: 50px;
-    margin-top: -10px;
-    margin-bottom: -10px;
+    margin: 0;
 }
 
 
@@ -59,8 +18,10 @@ body {
     margin: 0 auto;
 }
 
-.timeline p {
-    font-family: Helvetica, sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+.timeline li {
+        font-family: 'Merriweather';font-size: 20px;
+
 }
 
 /* The actual timeline (the vertical ruler) */
@@ -76,7 +37,7 @@ body {
 }
 
 /* Container around content */
-.container {
+.container-timeline {
     padding: 10px 40px;
     position: relative;
     background-color: inherit;
@@ -84,13 +45,13 @@ body {
 }
 
 /* The circles on the timeline */
-.container::after {
+.container-timeline::after {
     content: '';
     position: absolute;
     width: 25px;
     height: 25px;
     right: -17px;
-    background-color: white;
+    background-color: #333;
     border: 4px solid #ff0000;
     top: 15px;
     border-radius: 50%;
@@ -146,7 +107,13 @@ body {
     background-color: white;
     position: relative;
     border-radius: 6px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
+
+.content:hover {
+    box-shadow: 19px 38px 38px 19px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
 @media screen and (max-width: 600px) {
@@ -157,14 +124,14 @@ body {
     }
 
     /* Full-width containers */
-    .container {
+    .container-timeline {
         width: 100%;
         padding-left: 70px;
         padding-right: 25px;
     }
 
     /* Make sure that all arrows are pointing leftwards */
-    .container::before {
+    .container-timeline::before {
         left: 60px;
         border: medium solid white;
         border-width: 10px 10px 10px 0;
@@ -181,6 +148,11 @@ body {
     .right {
         left: 0%;
     }
+
+    .timeline li {
+        font-family: 'Merriweather';font-size: 20px;
+
+}
 }
 
 .confetti-container {
